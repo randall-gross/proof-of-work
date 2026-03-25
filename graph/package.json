@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "esbuild src/server.ts src/incremental-update.ts --bundle --platform=node --format=esm --outdir=dist --external:node:* --external:@modelcontextprotocol/*",
+    "build": "esbuild src/server.ts src/incremental-update.ts --bundle --platform=node --format=esm --outdir=dist --external:node:* --external:@modelcontextprotocol/* --external:web-tree-sitter --external:tree-sitter-javascript --external:tree-sitter-typescript",
     "build:watch": "npm run build -- --watch"
   },
   "dependencies": {
