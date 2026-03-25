@@ -7,6 +7,8 @@ import { GraphStore } from './store.js';
 import * as parser from './parser.js';
 import { handleBuildGraph } from './tools/build-graph.js';
 import { handleGraphStats } from './tools/graph-stats.js';
+import { handleQueryGraph } from './tools/query-graph.js';
+import { handleImpactRadius } from './tools/impact-radius.js';
 
 // ---------------------------------------------------------------------------
 // Lazy-initialized singletons
@@ -146,26 +148,10 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       return handleGraphStats(s);
 
     case 'pow_query_graph':
-      // Placeholder — implemented in Task 13b
-      return {
-        content: [{
-          type: 'text' as const,
-          text: JSON.stringify({
-            error: 'pow_query_graph is not yet implemented (Task 13b)',
-          }),
-        }],
-      };
+      return handleQueryGraph(s, args as { pattern: string; target: string });
 
     case 'pow_impact_radius':
-      // Placeholder — implemented in Task 13b
-      return {
-        content: [{
-          type: 'text' as const,
-          text: JSON.stringify({
-            error: 'pow_impact_radius is not yet implemented (Task 13b)',
-          }),
-        }],
-      };
+      return handleImpactRadius(s, args as { changed_files: string[]; max_depth?: number });
 
     default:
       throw new Error(`Unknown tool: ${name}`);
