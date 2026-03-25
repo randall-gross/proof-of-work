@@ -1,0 +1,5 @@
+{
+  "name": "proof-of-work",
+  "version": "1.0.0",
+  "description": "Verification suite that catches false completeness in AI coding assistants. Hard-gates completion claims, scores evidence, and grades quality."
+}
