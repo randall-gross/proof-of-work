@@ -9,9 +9,12 @@
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.0.0",
+    "tree-sitter-javascript": "^0.25.0",
+    "tree-sitter-typescript": "^0.23.2",
     "web-tree-sitter": "^0.24.0"
   },
   "devDependencies": {
+    "@types/node": "^25.5.0",
     "esbuild": "^0.24.0",
     "typescript": "^5.7.0"
   }
