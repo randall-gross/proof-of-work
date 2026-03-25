@@ -1,6 +1,6 @@
 import type Parser from 'web-tree-sitter';
-import type { GraphNode, GraphEdge, NodeKind } from './types.js';
-import { dirname, resolve, posix } from 'node:path';
+import type { GraphNode, GraphEdge } from './types.js';
+import { dirname, posix } from 'node:path';
 
 // ---------------------------------------------------------------------------
 // Helpers
